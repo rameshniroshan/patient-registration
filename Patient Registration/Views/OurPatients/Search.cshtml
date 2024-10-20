@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Patient_Registration.Models.Call_Patients>
+
+<div class="row">
+    <h2>Search Patients</h2>
+    <hr />
+    <div class="col-md-6">
+        <div class="border border-warning p-3" id="dvSearchSection">
+
+            <form method="post" asp-action="Search" asp-controller="OurPatients" name="formSearch" id="formSearch">
+                <div class="row">                                   
+                    <div class="form-group toplogoandgreentext">
+                        <label class="control-label marginlr-10">Name </label>   
+                        <input type="text" name="name" id="txtsearchname"  class="form-control mr-1" style="margin-right:10px" placeholder="Name" />
+                    </div>
+                    <div class="form-group toplogoandgreentext">
+                        <label class="control-label marginlr-10">Mobile </label>
+                        <input type="text" name="mobile" id="txtsearchmobile" class="form-control mr-1" style="margin-right:10px" placeholder="Mobile" />
+                    </div>                   
+                    <div class="form-group toplogoandgreentext">
+                        <label class="control-label marginlr-10">Guardian Name </label>
+                        <input type="text" name="guardianName" id="txtsearchguardianname" class="form-control mr-1" style="margin-right:10px" placeholder="Guardian Name" />
+                    </div>
+                </div>
+                @* <input type="text" name="searchterm" class="form-control mr-1" style="margin-right:10px" placeholder="Search" /> *@
+
+               @*  <input type="submit" value="search" name="btnSearch" id="btnSearch" class="btn btn-success" /> *@
+                <input type="submit" value="Reset" name="btnReset" id="btnReset" class="btn btn-success" />
+               
+            </form>
+        </div>
+    </div>
+</div>
+

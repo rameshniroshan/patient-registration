@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Patient_Registration.Models.Call_Patients>
+
+<div class="row listpatientpaddingtop1">
+    @await Html.PartialAsync("Search", Model)
+    </div>
+<div class="row listpatientpaddingtop">
+    <h2>List Patients</h2>
+    <hr />
+    <div class="border border-warning1 pl-3 horizontalscroll">
+        <table class="table">
+            <thead>
+                <tr class="bg-secondary opacity-50">
+                    <th>@Html.DisplayNameFor(model => model.MobileNo)</th>
+                    <th>@Html.DisplayNameFor(model => model.NIC)</th>
+                    @* <th>@Html.DisplayNameFor(model => model.PassportNo)</th>
+                    <th>@Html.DisplayNameFor(model => model.Designation)</th> *@
+                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                    <th>@Html.DisplayNameFor(model => model.GuardianID)</th>
+                    <th>@Html.DisplayNameFor(model => model.GuardianName)</th>
+                    <th>@Html.DisplayNameFor(model => model.RelationGuardian)</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.MobileNo)</td>
+                        <td>@Html.DisplayFor(modelItem => item.NIC)</td>
+                        @* <td>@Html.DisplayFor(modelItem => item.PassportNo)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Designation)</td> *@
+                        <td>@Html.DisplayFor(modelItem => item.Name) &nbsp;@Html.DisplayFor(modelItem => item.Surname)</td>
+                        <td>@Html.DisplayFor(modelItem => item.GuardianID)</td>
+                        <td>@Html.DisplayFor(modelItem => item.GuardianName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.RelationGuardian)</td>
+                        <td class="showinsameline">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                        <td></td>
+                    </tr>
+                }            
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

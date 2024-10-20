@@ -1,0 +1,112 @@
+﻿
+<!DOCTYPE
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @* @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr") *@
+
+     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-utilities.css" />
+    <link rel="stylesheet" href="~/css/Jquery-ui.css" /> 
+    
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+
+   
+</head>
+<body>
+    <div class="sitepagetopblueLine"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 toplogoandgreentext">
+                <img class="toplogo" src="~/images/sitetoplogo.png" />
+                <p class="sitetopbargreen">Nawaloka Hospitals PLC</p>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark d-none">
+        <div class="container">
+            <div class="roww">
+
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li></li>
+
+                        @* <li class="nav-link">cc</li>
+                        @{
+
+                        <li class="nav-link">userName</li>
+                        }
+                        @{ *@
+                        @* // if (Session["logged"].ToString() == "true")
+                        // {
+                        //     <li class="nav-link">Hi @Session["userName"].ToString()!</li>
+                        //     <li>@Html.ActionLink("SignOut", "SignOut", "Login", new { area = "" }, new { @class = "nav-link" })</li>
+                        // } *@
+                        }
+
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        <!-- The sidebar -->
+        <div class="sidebar">
+            @Html.ActionLink("DASHBOARD", "Dashboard", "Users", new { area = "" }, new { @class = "active nav-link leftmenuitem" })
+            @Html.ActionLink("PATIENTS", "Create", "OurPatients", new { area = "" }, new { @class = "nav-link leftmenuitem" })           
+            <a href="#">CHANGE PASSWORD</a>
+            <a href="#">LOGOUT</a>            
+        </div>
+
+        <!-- Page content -->
+        <div class="content">
+           @RenderBody()
+        </div>
+
+        
+
+
+        <hr />
+       @*  <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer> *@
+    </div>
+
+    @* @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap") *@
+    <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+   
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/js/site.js"></script>
+
+    @RenderSection("scripts", required: false)
+    <script>
+    $(document).ready(function () {
+            $(".leftmenuitem").click(function () {
+               // alert("aaa");
+                $(".leftmenuitem").removeClass("active");
+        });
+    
+        });
+    </script>
+</body>
+</html>
